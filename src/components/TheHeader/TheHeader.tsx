@@ -1,29 +1,16 @@
 import { useState } from "react";
 import styles from "./TheHeader.module.scss";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
-interface TheHeaderProps {}
-
-export const TheHeader = ({}: TheHeaderProps) => {
+export const TheHeader = () => {
   const [findUser, setFindUser] = useState("");
-
-  const toFind = () => {
-    console.log(findUser);
-
-    // this.preventDefault();
-  };
 
   return (
     <div className={styles.TheHeader}>
-      <img src="lupa" alt="" />
-      <input
-        className="input"
-        placeholder="gitHub username..."
-        onChange={(e) => setFindUser(e.target.value)}
-        value={findUser}
-      />
-      <button className="btn" onClick={toFind}>
-        Search
-      </button>
+      <div className={styles.logo}>
+        <h1>DevFinder</h1>
+      </div>
+      <ThemeSwitcher />
     </div>
   );
 };
